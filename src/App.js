@@ -1,6 +1,9 @@
 import './App.css';
+import NumberedList from './NumberedList';
 import LargePersonList from './people/LargePersonList';
 import SmallPersonList from './people/SmallPersonList';
+import LargeProductList from './products/LargeProductList';
+import SmallProductList from './products/SmallProductList';
 import RegularList from './RegularList';
 import SplitScreen from './SplitScreen';
 
@@ -16,14 +19,20 @@ function App() {
       <LeftHandComponent name="Dinith" />
       <RightHandComponent message="Full Stack developer" />
     </SplitScreen>
-    <RegularList items={people}
-    resourceName="person"
-    itemsComponent={SmallPersonList}/>
-    <RegularList items={people}
-    resourceName="person"
-    itemsComponent={LargePersonList}/>
+      <RegularList items={people}
+        resourceName="person"
+        itemsComponent={SmallPersonList} />
+      <NumberedList items={people}
+        resourceName="person"
+        itemsComponent={LargePersonList} />
+        <RegularList items={products}
+        resourceName="product"
+        itemsComponent={SmallProductList} />
+        <NumberedList items={products}
+        resourceName="product"
+        itemsComponent={LargeProductList} />
     </>
-    
+
   );
 }
 
